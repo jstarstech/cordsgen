@@ -10,11 +10,11 @@ function gen(minLong = 1, minLat = 1, maxLong = 1.2, maxLat = 1.2) {
   return [long, lat];
 }
 
-function generateGeoData() {
+function generateGeoData(count = 0) {
   const bbox = [34.2654333839, 29.5013261988, 35.8363969256, 33.2774264593];
   const cordsArr = new Map();
 
-  for (let i = 0; i < 1000; i++) {
+  for (let i = 0; i < count; i++) {
     let res;
 
     do {
@@ -59,8 +59,8 @@ function generateGeoHashJsonOut(count = 0) {
     cordsArr.push(encodeBase32(res[1], res[0]));
   }
 
-  console.log(JSON.stringify(cordsArr));
+  writeFileSync("geoHashData.json", JSON.stringify(cordsArr, null, 2));
 }
 
 // generateGeoData();
-generateGeoHashJsonOut(1000);
+generateGeoHashJsonOut(5000);

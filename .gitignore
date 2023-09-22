@@ -13,3 +13,4 @@ jspm_packages/
 
 # Ignore generated data
 geoData.json*
+geoHashData.json*
