@@ -1,5 +1,5 @@
 import { writeFileSync } from "fs";
-import { encodeBase32, decodeBase32 } from "geohashing";
+import { encodeBase32 } from "geohashing";
 
 function gen(minLong = 1, minLat = 1, maxLong = 1.2, maxLat = 1.2) {
   const long = Number(
