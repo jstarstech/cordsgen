@@ -11,12 +11,15 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "geohashing": "^2.0.1",
-    "random-js": "^2.1.0",
     "eslint": "^9.16.0",
-    "globals": "^15.13.0"
+    "geohashing": "^2.0.1",
+    "globals": "^15.13.0",
+    "random-js": "^2.1.0"
   },
   "engines": {
     "node": ">=18.0.0 <=20.0.0"
+  },
+  "devDependencies": {
+    "prettier": "^3.4.2"
   }
 }
