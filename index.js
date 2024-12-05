@@ -12,16 +12,16 @@ function gen(minLong = 1, minLat = 1, maxLong = 1.2, maxLat = 1.2) {
 
 function generateGeoData(count = 0) {
   const bbox = [34.2654333839, 29.5013261988, 35.8363969256, 33.2774264593];
-  const cordsArr = new Map();
+  const cordsMap = new Map();
 
   for (let i = 0; i < count; i++) {
     let res;
 
     do {
       res = gen(bbox[0], bbox[1], bbox[2], bbox[3]);
-    } while (cordsArr.has(res));
+    } while (cordsMap.has(res));
 
-    cordsArr.set(res, 1);
+    cordsMap.set(res, 1);
   }
 
   const geoData = {
@@ -29,7 +29,7 @@ function generateGeoData(count = 0) {
     features: [],
   };
 
-  for (const cords of Array.from(cordsArr.keys())) {
+  for (const cords of Array.from(cordsMap.keys())) {
     const feature = {
       type: "Feature",
       properties: {},
