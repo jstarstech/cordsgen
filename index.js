@@ -60,7 +60,6 @@ function generateGeoHashJsonOut(bbox, count = 0) {
   writeFileSync("geoHashData.json", JSON.stringify(cordsArr, null, 2));
 }
 
-
 const bbox = [34.2654333839, 29.5013261988, 35.8363969256, 33.2774264593];
 
 generateGeoData(bbox, 100);
