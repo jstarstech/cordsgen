@@ -54,7 +54,7 @@ function generateGeoHashJsonOut(count = 0) {
 
     do {
       res = gen(bbox[0], bbox[1], bbox[2], bbox[3]);
-    } while (cordsArr.includes(res));
+    } while (cordsArr.includes(res.toString()));
 
     cordsArr.push(encodeBase32(res[1], res[0]));
   }
@@ -62,5 +62,5 @@ function generateGeoHashJsonOut(count = 0) {
   writeFileSync("geoHashData.json", JSON.stringify(cordsArr, null, 2));
 }
 
-// generateGeoData();
+generateGeoData(100);
 generateGeoHashJsonOut(5000);
